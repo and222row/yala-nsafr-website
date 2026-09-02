@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يلا نسافر | Yala Nsafr</title>
+  <meta name="description" content="تطبيق مصري لمشاركة رحلات السيارات بين المدن - سافر بأقل تكلفة مع سائقين موثوقين | Egypt's intercity carpooling app" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <!-- Unique logo: route/journey icon -->
+      <svg class="logo-svg" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="38" height="38" rx="11" fill="white" fill-opacity="0.18"/>
+        <!-- Start circle -->
+        <circle cx="10" cy="28" r="3.2" fill="white"/>
+        <!-- Destination pin -->
+        <path d="M28 8C24.69 8 22 10.69 22 14c0 4.5 6 11 6 11s6-6.5 6-11c0-3.31-2.69-6-6-6zm0 8.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5z" fill="white"/>
+        <!-- Dashed road -->
+        <path d="M12.5 26C14 22 18 18 22 15" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="2.5 3.5"/>
+        <!-- Speed lines -->
+        <path d="M5 17H9M5 21H8" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+      <span class="logo-text-ar">يلا نسافر</span>
+      <span class="logo-text-en" style="display:none">Yala Nsafr</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#how-it-works" data-ar="كيف يعمل" data-en="How It Works">كيف يعمل</a>
+      <a href="#payment" data-ar="المدفوعات" data-en="Payments">المدفوعات</a>
+      <a href="#safety" data-ar="الأمان" data-en="Safety">الأمان</a>
+      <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════ HERO ════════════════════════════════ -->
+<section class="hero-wrapper">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge" data-ar="🇪🇬 متاح في مصر" data-en="🇪🇬 Available in Egypt">🇪🇬 متاح في مصر</div>
+      <h1 class="hero-title">
+        <span data-ar="سافر بين المدن" data-en="Travel Between Cities">سافر بين المدن</span><br>
+        <span class="highlight" data-ar="بأمان وراحة وتوفير" data-en="Safely, Comfortably & Affordably">بأمان وراحة وتوفير</span>
+      </h1>
+      <p class="hero-desc" data-ar="يلا نسافر هو التطبيق المصري الأول لمشاركة رحلات السيارات بين المدن. سافر مع سائقين موثوقين بأسعار معقولة، أو انشر رحلتك وشارك تكاليف السفر." data-en="Yala Nsafr is Egypt's first intercity carpooling app. Travel with verified drivers at affordable prices, or post your trip and share travel costs.">
+        يلا نسافر هو التطبيق المصري الأول لمشاركة رحلات السيارات بين المدن. سافر مع سائقين موثوقين بأسعار معقولة، أو انشر رحلتك وشارك تكاليف السفر.
+      </p>
+      <div class="hero-btns">
+        <a href="#download" class="btn-primary" data-ar="حمّل التطبيق الآن" data-en="Download the App">حمّل التطبيق الآن</a>
+        <a href="#how-it-works" class="btn-secondary" data-ar="اعرف أكثر" data-en="Learn More">اعرف أكثر</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label" data-ar="مدينة" data-en="Cities">مدينة</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">7%</span><span class="stat-label" data-ar="عمولة شفافة فقط" data-en="Transparent Commission">عمولة شفافة فقط</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label" data-ar="سائقون موثقون" data-en="Verified Drivers">سائقون موثقون</span></div>
+      </div>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="mock-header">
+            <div class="mock-logo-small">يلا نسافر</div>
+            <div class="mock-notif">🔔</div>
+          </div>
+          <div class="mock-search">
+            <div class="mock-search-row">
+              <span class="mock-dot green"></span>
+              <span class="mock-city" data-ar="القاهرة" data-en="Cairo">القاهرة</span>
+            </div>
+            <div class="mock-search-divider"></div>
+            <div class="mock-search-row">
+              <span class="mock-dot red"></span>
+              <span class="mock-city" data-ar="الإسكندرية" data-en="Alexandria">الإسكندرية</span>
+            </div>
+          </div>
+          <div class="mock-trip-card">
+            <div class="mock-trip-header">
+              <span class="mock-driver-avatar">أ</span>
+              <div>
+                <div class="mock-driver-name" data-ar="أحمد محمود" data-en="Ahmed Mahmoud">أحمد محمود</div>
+                <div class="mock-stars">★★★★★ <span>4.9</span></div>
+              </div>
+              <div class="mock-price">150 ج</div>
+            </div>
+            <div class="mock-trip-info">
+              <span>🚗 Toyota Camry</span>
+              <span>⏰ 08:00</span>
+              <span>💺 3 متاح</span>
+            </div>
+            <div class="mock-book-btn" data-ar="احجز الآن" data-en="Book Now">احجز الآن</div>
+          </div>
+          <div class="mock-trip-card">
+            <div class="mock-trip-header">
+              <span class="mock-driver-avatar pink">س</span>
+              <div>
+                <div class="mock-driver-name" data-ar="سارة علي" data-en="Sara Ali">سارة علي</div>
+                <div class="mock-stars">★★★★☆ <span>4.7</span></div>
+              </div>
+              <div class="mock-price">130 ج</div>
+            </div>
+            <div class="mock-badge" data-ar="نساء فقط" data-en="Women Only">نساء فقط ♀</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ HOW IT WORKS ══════════════════════════════ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-ar="كيف يعمل التطبيق؟" data-en="How Does It Work?">كيف يعمل التطبيق؟</h2>
+      <p data-ar="خطوات بسيطة للسفر بأقل تكلفة" data-en="Simple steps to travel at lower cost">خطوات بسيطة للسفر بأقل تكلفة</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('passenger')" id="tab-passenger" data-ar="للركاب" data-en="For Passengers">للركاب</button>
+      <button class="tab-btn" onclick="switchTab('driver')" id="tab-driver" data-ar="للسائقين" data-en="For Drivers">للسائقين</button>
+    </div>
+
+    <div id="content-passenger" class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">🔍</div>
+        <div class="step-num">1</div>
+        <h3 data-ar="ابحث عن رحلة" data-en="Search for a Trip">ابحث عن رحلة</h3>
+        <p data-ar="أدخل مدينتك ووجهتك وتاريخ السفر وعدد المقاعد المطلوبة" data-en="Enter your city, destination, travel date and number of seats needed">أدخل مدينتك ووجهتك وتاريخ السفر وعدد المقاعد المطلوبة</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">✅</div>
+        <div class="step-num">2</div>
+        <h3 data-ar="اختر وأكد" data-en="Choose & Confirm">اختر وأكد</h3>
+        <p data-ar="اختر الرحلة المناسبة وأكد حجزك بالدفع الآمن أونلاين أو نقداً" data-en="Choose the right trip and confirm your booking with secure online payment or cash">اختر الرحلة المناسبة وأكد حجزك بالدفع الآمن أونلاين أو نقداً</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">🚗</div>
+        <div class="step-num">3</div>
+        <h3 data-ar="سافر بأمان" data-en="Travel Safely">سافر بأمان</h3>
+        <p data-ar="تتبع موقع السائق مباشرة وسافر بأمان مع نظام تقييم شامل" data-en="Track the driver's location live and travel safely with our comprehensive rating system">تتبع موقع السائق مباشرة وسافر بأمان مع نظام تقييم شامل</p>
+      </div>
+    </div>
+
+    <div id="content-driver" class="steps-grid" style="display:none">
+      <div class="step-card">
+        <div class="step-icon">📝</div>
+        <div class="step-num">1</div>
+        <h3 data-ar="انشر رحلتك" data-en="Post Your Trip">انشر رحلتك</h3>
+        <p data-ar="حدد مسارك ووقت الانطلاق وعدد المقاعد المتاحة وسعر المقعد" data-en="Set your route, departure time, available seats and price per seat">حدد مسارك ووقت الانطلاق وعدد المقاعد المتاحة وسعر المقعد</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">💰</div>
+        <div class="step-num">2</div>
+        <h3 data-ar="استقبل الحجوزات" data-en="Receive Bookings">استقبل الحجوزات</h3>
+        <p data-ar="ستصلك إشعارات فور حجز أي راكب. الدفع مضمون ومحمي" data-en="Get notified instantly when a passenger books. Payment is guaranteed and protected">ستصلك إشعارات فور حجز أي راكب. الدفع مضمون ومحمي</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">🏦</div>
+        <div class="step-num">3</div>
+        <h3 data-ar="استلم أرباحك" data-en="Receive Your Earnings">استلم أرباحك</h3>
+        <p data-ar="بعد اكتمال الرحلة، تصلك 93% من قيمة الحجوزات عبر فودافون كاش أو إنستاباي" data-en="After trip completion, receive 93% of booking value via Vodafone Cash or InstaPay">بعد اكتمال الرحلة، تصلك 93% من قيمة الحجوزات عبر فودافون كاش أو إنستاباي</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ PAYMENT ════════════════════════════════ -->
+<section class="section bg-light" id="payment">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-ar="المدفوعات والعمولات" data-en="Payments & Commissions">المدفوعات والعمولات</h2>
+      <p data-ar="شفافية كاملة في التسعير بدون رسوم مخفية" data-en="Complete pricing transparency with no hidden fees">شفافية كاملة في التسعير بدون رسوم مخفية</p>
+    </div>
+
+    <div class="payment-grid">
+      <div class="payment-card main-card">
+        <h3 data-ar="طرق الدفع المتاحة" data-en="Available Payment Methods">طرق الدفع المتاحة</h3>
+        <div class="payment-method">
+          <div class="pm-icon">💳</div>
+          <div>
+            <strong data-ar="بطاقات الائتمان والخصم" data-en="Credit & Debit Cards">بطاقات الائتمان والخصم</strong>
+            <p data-ar="Visa، Mastercard، Meeza" data-en="Visa, Mastercard, Meeza">Visa، Mastercard، Meeza</p>
+          </div>
+          <span class="pm-badge" data-ar="متاح" data-en="Available">متاح</span>
+        </div>
+        <div class="payment-method">
+          <div class="pm-icon">💵</div>
+          <div>
+            <strong data-ar="الدفع نقداً" data-en="Cash Payment">الدفع نقداً</strong>
+            <p data-ar="ادفع للسائق مباشرة عند الصعود" data-en="Pay the driver directly at pickup">ادفع للسائق مباشرة عند الصعود</p>
+          </div>
+          <span class="pm-badge" data-ar="متاح" data-en="Available">متاح</span>
+        </div>
+        <div class="payment-method">
+          <div class="pm-icon">📱</div>
+          <div>
+            <strong data-ar="فودافون كاش وفوري" data-en="Vodafone Cash & Fawry">فودافون كاش وفوري</strong>
+            <p data-ar="المحافظ الرقمية المصرية" data-en="Egyptian digital wallets">المحافظ الرقمية المصرية</p>
+          </div>
+          <span class="pm-badge soon" data-ar="قريباً" data-en="Coming Soon">قريباً</span>
+        </div>
+      </div>
+
+      <div class="commission-card">
+        <h3 data-ar="هيكل العمولة" data-en="Commission Structure">هيكل العمولة</h3>
+        <div class="commission-diagram">
+          <div class="commission-circle">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#e8f5e9" stroke-width="20"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#1B5E3B" stroke-width="20"
+                stroke-dasharray="282" stroke-dashoffset="20" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="commission-label">
+              <span class="big">93%</span>
+              <span data-ar="للسائق" data-en="Driver">للسائق</span>
+            </div>
+          </div>
+          <div class="commission-breakdown">
+            <div class="cb-row">
+              <span class="cb-dot green"></span>
+              <span data-ar="نصيب السائق" data-en="Driver's share">نصيب السائق</span>
+              <strong>93%</strong>
+            </div>
+            <div class="cb-row">
+              <span class="cb-dot gray"></span>
+              <span data-ar="عمولة المنصة" data-en="Platform commission">عمولة المنصة</span>
+              <strong>7%</strong>
+            </div>
+            <div class="cb-example">
+              <p data-ar="مثال: رحلة بـ 200 جنيه" data-en="Example: 200 EGP trip">مثال: رحلة بـ 200 جنيه</p>
+              <p>→ <span data-ar="السائق يستلم 186 جنيه" data-en="Driver receives 186 EGP">السائق يستلم 186 جنيه</span></p>
+              <p>→ <span data-ar="المنصة 14 جنيه فقط" data-en="Platform only 14 EGP">المنصة 14 جنيه فقط</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="refund-card">
+        <h3 data-ar="سياسة الاسترداد" data-en="Refund Policy">سياسة الاسترداد</h3>
+        <div class="refund-row">
+          <span class="refund-icon">✅</span>
+          <div>
+            <strong data-ar="إلغاء قبل 24 ساعة" data-en="Cancel 24h+ before">إلغاء قبل 24 ساعة</strong>
+            <p data-ar="استرداد كامل 100%" data-en="Full 100% refund">استرداد كامل 100%</p>
+          </div>
+        </div>
+        <div class="refund-row">
+          <span class="refund-icon">⚡</span>
+          <div>
+            <strong data-ar="إلغاء من السائق" data-en="Driver cancellation">إلغاء من السائق</strong>
+            <p data-ar="استرداد فوري كامل للراكب" data-en="Immediate full refund to passenger">استرداد فوري كامل للراكب</p>
+          </div>
+        </div>
+        <div class="refund-row">
+          <span class="refund-icon">⚖️</span>
+          <div>
+            <strong data-ar="نزاعات الرحلة" data-en="Trip disputes">نزاعات الرحلة</strong>
+            <p data-ar="مراجعة خلال 48 ساعة واسترداد حسب نتيجة التحقيق" data-en="Review within 48h, refund based on investigation">مراجعة خلال 48 ساعة واسترداد حسب نتيجة التحقيق</p>
+          </div>
+        </div>
+        <div class="refund-row">
+          <span class="refund-icon">🔒</span>
+          <div>
+            <strong data-ar="أمان المدفوعات" data-en="Payment Security">أمان المدفوعات</strong>
+            <p data-ar="تشفير SSL 256-bit لجميع المعاملات" data-en="256-bit SSL encryption for all transactions">تشفير SSL 256-bit لجميع المعاملات</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ FEATURES ════════════════════════════════ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-ar="مميزات يلا نسافر" data-en="Yala Nsafr Features">مميزات يلا نسافر</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon">📍</div>
+        <h4 data-ar="تتبع GPS مباشر" data-en="Live GPS Tracking">تتبع GPS مباشر</h4>
+        <p data-ar="تابع موقع السيارة في الوقت الفعلي لطمأنينة الأهل" data-en="Track the car's location in real time for family peace of mind">تابع موقع السيارة في الوقت الفعلي لطمأنينة الأهل</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">⭐</div>
+        <h4 data-ar="نظام تقييم شامل" data-en="Comprehensive Rating System">نظام تقييم شامل</h4>
+        <p data-ar="ركاب وسائقون يقيّمون بعضهم لضمان جودة التجربة" data-en="Passengers and drivers rate each other to ensure quality">ركاب وسائقون يقيّمون بعضهم لضمان جودة التجربة</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">♀️</div>
+        <h4 data-ar="رحلات نساء فقط" data-en="Women-Only Trips">رحلات نساء فقط</h4>
+        <p data-ar="خيار مخصص للسيدات للسفر بشكل أكثر أماناً وراحة" data-en="Dedicated option for women to travel more safely and comfortably">خيار مخصص للسيدات للسفر بشكل أكثر أماناً وراحة</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">✅</div>
+        <h4 data-ar="سائقون موثقون" data-en="Verified Drivers">سائقون موثقون</h4>
+        <p data-ar="التحقق من الهوية ورخصة القيادة والسيارة قبل القبول" data-en="Identity, license and vehicle verified before acceptance">التحقق من الهوية ورخصة القيادة والسيارة قبل القبول</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">💬</div>
+        <h4 data-ar="مجموعة الرحلة" data-en="Trip Group Chat">مجموعة الرحلة</h4>
+        <p data-ar="تواصل بين الركاب والسائق داخل التطبيق بأمان" data-en="Safe in-app communication between passengers and driver">تواصل بين الركاب والسائق داخل التطبيق بأمان</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">⚖️</div>
+        <h4 data-ar="نظام فض النزاعات" data-en="Dispute Resolution">نظام فض النزاعات</h4>
+        <p data-ar="فريق دعم متخصص لحل أي خلافات بين الركاب والسائقين" data-en="Specialized support team to resolve disputes between passengers and drivers">فريق دعم متخصص لحل أي خلافات بين الركاب والسائقين</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ SAFETY ════════════════════════════════ -->
+<section class="section bg-dark" id="safety">
+  <div class="container">
+    <div class="section-header light">
+      <h2 data-ar="الأمان أولويتنا" data-en="Safety is Our Priority">الأمان أولويتنا</h2>
+      <p data-ar="نضع سلامتك فوق كل اعتبار" data-en="We put your safety above everything">نضع سلامتك فوق كل اعتبار</p>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-item">
+        <div class="safety-icon">🪪</div>
+        <div>
+          <h4 data-ar="التحقق من الهوية" data-en="Identity Verification">التحقق من الهوية</h4>
+          <p data-ar="جميع السائقين يخضعون للتحقق من بطاقة الهوية الوطنية ورخصة القيادة" data-en="All drivers undergo national ID and driver's license verification">جميع السائقين يخضعون للتحقق من بطاقة الهوية الوطنية ورخصة القيادة</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🚨</div>
+        <div>
+          <h4 data-ar="زر الطوارئ SOS" data-en="SOS Emergency Button">زر الطوارئ SOS</h4>
+          <p data-ar="زر طوارئ داخل التطبيق للإبلاغ الفوري في حالات الطوارئ" data-en="In-app emergency button for immediate reporting in emergency situations">زر طوارئ داخل التطبيق للإبلاغ الفوري في حالات الطوارئ</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">📸</div>
+        <div>
+          <h4 data-ar="سجل الرحلات" data-en="Trip History">سجل الرحلات</h4>
+          <p data-ar="كل رحلة موثقة بالكامل مع بيانات GPS لضمان المساءلة" data-en="Every trip is fully documented with GPS data to ensure accountability">كل رحلة موثقة بالكامل مع بيانات GPS لضمان المساءلة</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🔒</div>
+        <div>
+          <h4 data-ar="خصوصية البيانات" data-en="Data Privacy">خصوصية البيانات</h4>
+          <p data-ar="بياناتك محمية وفق أعلى معايير الأمان ولن تُشارك مع أطراف ثالثة" data-en="Your data is protected to the highest security standards and won't be shared with third parties">بياناتك محمية وفق أعلى معايير الأمان ولن تُشارك مع أطراف ثالثة</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ DOWNLOAD ════════════════════════════════ -->
+<section class="section" id="download">
+  <div class="container">
+    <div class="download-section">
+      <div class="download-content">
+        <h2 data-ar="حمّل التطبيق الآن" data-en="Download the App Now">حمّل التطبيق الآن</h2>
+        <p data-ar="متاح على Android و iOS قريباً" data-en="Available on Android — iOS coming soon">متاح على Android و iOS قريباً</p>
+        <div class="store-buttons">
+          <!-- Google Play -->
+          <div class="store-btn android">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.523 15.34L6.477 15.34a.476.476 0 01-.476-.477V9.137c0-.263.213-.476.476-.476h11.046c.263 0 .476.213.476.476v5.726a.476.476 0 01-.476.477zM3 9.614v4.773a1.43 1.43 0 001.43 1.43h.477v2.86a1.43 1.43 0 002.86 0v-2.86h4.773v2.86a1.43 1.43 0 002.86 0v-2.86h.477A1.43 1.43 0 0017.307 14.387V9.614a1.43 1.43 0 00-1.43-1.43H4.43A1.43 1.43 0 003 9.614zM6.977 7.23L5.5 5.753a.477.477 0 01.674-.674l1.64 1.64a5.72 5.72 0 017.372 0l1.64-1.64a.477.477 0 01.674.674L16.023 7.23A5.73 5.73 0 0112 6.3a5.73 5.73 0 01-5.023.93z"/></svg>
+            <div>
+              <span data-ar="متاح على" data-en="Get it on">متاح على</span>
+              <strong>Google Play</strong>
+            </div>
+          </div>
+          <!-- App Store — coming soon -->
+          <div class="store-btn ios">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div>
+              <span data-ar="قريباً على" data-en="Coming soon on">قريباً على</span>
+              <strong>App Store</strong>
+            </div>
+            <span class="store-soon-badge" data-ar="قريباً" data-en="Soon">قريباً</span>
+          </div>
+        </div>
+      </div>
+      <div class="qr-placeholder">
+        <div class="qr-box">
+          <div class="qr-inner">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <rect x="5" y="5" width="25" height="25" rx="3" stroke="#1B5E3B" stroke-width="3"/>
+              <rect x="12" y="12" width="11" height="11" fill="#1B5E3B"/>
+              <rect x="50" y="5" width="25" height="25" rx="3" stroke="#1B5E3B" stroke-width="3"/>
+              <rect x="57" y="12" width="11" height="11" fill="#1B5E3B"/>
+              <rect x="5" y="50" width="25" height="25" rx="3" stroke="#1B5E3B" stroke-width="3"/>
+              <rect x="12" y="57" width="11" height="11" fill="#1B5E3B"/>
+              <rect x="38" y="38" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="50" y="38" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="62" y="38" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="38" y="50" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="62" y="50" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="50" y="62" width="7" height="7" fill="#1B5E3B"/>
+              <rect x="62" y="62" width="7" height="7" fill="#1B5E3B"/>
+            </svg>
+          </div>
+          <p data-ar="امسح للتحميل" data-en="Scan to download">امسح للتحميل</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ CONTACT ════════════════════════════════ -->
+<section class="section bg-light" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+      <p data-ar="فريقنا يرد خلال 24 ساعة" data-en="Our team responds within 24 hours">فريقنا يرد خلال 24 ساعة</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-icon-sm">📧</div>
+          <div>
+            <strong data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</strong>
+            <span>support@yalansafr.app</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon-sm">📍</div>
+          <div>
+            <strong data-ar="العنوان" data-en="Address">العنوان</strong>
+            <span data-ar="القاهرة، جمهورية مصر العربية" data-en="Cairo, Arab Republic of Egypt">القاهرة، جمهورية مصر العربية</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon-sm">⏰</div>
+          <div>
+            <strong data-ar="ساعات الدعم" data-en="Support Hours">ساعات الدعم</strong>
+            <span data-ar="السبت – الخميس، 9ص – 9م" data-en="Sat – Thu, 9AM – 9PM">السبت – الخميس، 9ص – 9م</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/and2222row@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="رسالة من موقع يلا نسافر" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://website-psi-eight-an61foi7l5.vercel.app#contact" />
+
+        <div class="form-group">
+          <label data-ar="بريدك الإلكتروني" data-en="Your Email">بريدك الإلكتروني</label>
+          <input type="email" name="email" required placeholder="example@email.com" />
+        </div>
+        <div class="form-group">
+          <label data-ar="الموضوع" data-en="Subject">الموضوع</label>
+          <input type="text" name="subject" required data-placeholder-ar="موضوع رسالتك" data-placeholder-en="Message subject" placeholder="موضوع رسالتك" />
+        </div>
+        <div class="form-group">
+          <label data-ar="الرسالة" data-en="Message">الرسالة</label>
+          <textarea name="message" rows="5" required data-placeholder-ar="اكتب رسالتك هنا..." data-placeholder-en="Write your message here..." placeholder="اكتب رسالتك هنا..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ FOOTER ════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">يلا نسافر</div>
+        <p data-ar="التطبيق المصري الأول لمشاركة رحلات السيارات بين المدن" data-en="Egypt's first intercity carpooling app">التطبيق المصري الأول لمشاركة رحلات السيارات بين المدن</p>
+      </div>
+      <div class="footer-links">
+        <h5 data-ar="روابط مهمة" data-en="Important Links">روابط مهمة</h5>
+        <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+        <a href="terms.html" data-ar="الشروط والأحكام" data-en="Terms & Conditions">الشروط والأحكام</a>
+        <a href="#payment" data-ar="سياسة الاسترداد" data-en="Refund Policy">سياسة الاسترداد</a>
+      </div>
+      <div class="footer-links">
+        <h5 data-ar="التطبيق" data-en="The App">التطبيق</h5>
+        <a href="#how-it-works" data-ar="كيف يعمل" data-en="How It Works">كيف يعمل</a>
+        <a href="#safety" data-ar="الأمان" data-en="Safety">الأمان</a>
+        <a href="#download" data-ar="تحميل" data-en="Download">تحميل</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-ar="© 2026 يلا نسافر. جميع الحقوق محفوظة." data-en="© 2026 Yala Nsafr. All rights reserved.">© 2026 يلا نسافر. جميع الحقوق محفوظة.</p>
+      <p data-ar="مسجل في جمهورية مصر العربية" data-en="Registered in the Arab Republic of Egypt">مسجل في جمهورية مصر العربية</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+let currentLang = 'ar';
+
+function toggleLang() {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  const html = document.documentElement;
+  const btn = document.getElementById('langBtn');
+  const logoAr = document.querySelector('.logo-text-ar');
+  const logoEn = document.querySelector('.logo-text-en');
+
+  if (currentLang === 'en') {
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    btn.textContent = 'AR';
+    document.body.classList.add('lang-en');
+    logoAr.style.display = 'none';
+    logoEn.style.display = 'inline';
+  } else {
+    html.setAttribute('lang', 'ar');
+    html.setAttribute('dir', 'rtl');
+    btn.textContent = 'EN';
+    document.body.classList.remove('lang-en');
+    logoAr.style.display = 'inline';
+    logoEn.style.display = 'none';
+  }
+
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    const text = currentLang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+    if (text) el.textContent = text;
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-placeholder-ar]').forEach(el => {
+    el.placeholder = currentLang === 'ar'
+      ? el.getAttribute('data-placeholder-ar')
+      : el.getAttribute('data-placeholder-en');
+  });
+}
+
+function switchTab(tab) {
+  document.getElementById('content-passenger').style.display = tab === 'passenger' ? 'grid' : 'none';
+  document.getElementById('content-driver').style.display = tab === 'driver' ? 'grid' : 'none';
+  document.getElementById('tab-passenger').classList.toggle('active', tab === 'passenger');
+  document.getElementById('tab-driver').classList.toggle('active', tab === 'driver');
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const el = document.querySelector(a.getAttribute('href'));
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+window.addEventListener('scroll', () => {
+  document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
